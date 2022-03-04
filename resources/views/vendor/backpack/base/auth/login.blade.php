@@ -12,11 +12,14 @@
                         {!! csrf_field() !!}
 
                         <div class="form-group">
-                            <label class="control-label" for="{{ $username }}">{{ config('backpack.base.authentication_column_name') }}</label>
+                            <label class="control-label"
+                                for="{{ $username }}">{{ config('backpack.base.authentication_column_name') }}</label>
 
                             <div>
-                                <input type="text" class="form-control{{ $errors->has($username) ? ' is-invalid' : '' }}" name="{{ $username }}" value="{{ old($username) ?? 'admin@example.com' }}" id="{{ $username }}">
-
+                                <input type="text" class="form-control{{ $errors->has($username) ? ' is-invalid' : '' }}"
+                                    name="{{ $username }}" value="{{ old($username) ?? null }}"
+                                    id="{{ $username }}">
+                                {{-- admin@example.com --}}
                                 @if ($errors->has($username))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first($username) }}</strong>
@@ -27,9 +30,11 @@
 
                         <div class="form-group">
                             <label class="control-label" for="password">{{ trans('backpack::base.password') }}</label>
-
+                            <!-- admin -->
                             <div>
-                                <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="password" value="{{ old('username')?'':'admin' }}">
+                                <input type="password"
+                                    class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                    name="password" id="password" value="{{ old('password') ? '' : '' }}">
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
@@ -60,10 +65,13 @@
                 </div>
             </div>
             @if (backpack_users_have_email())
-                <div class="text-center"><a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a></div>
+                <div class="text-center"><a
+                        href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a>
+                </div>
             @endif
             @if (config('backpack.base.registration_open'))
-                <div class="text-center"><a href="{{ route('backpack.auth.register') }}">{{ trans('backpack::base.register') }}</a></div>
+                <div class="text-center"><a
+                        href="{{ route('backpack.auth.register') }}">{{ trans('backpack::base.register') }}</a></div>
             @endif
         </div>
     </div>
