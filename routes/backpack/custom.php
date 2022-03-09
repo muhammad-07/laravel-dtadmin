@@ -50,4 +50,8 @@ Route::group([
     Route::crud('test', 'TestCrudController');
     Route::crud('category', 'CategoryCrudController');
     Route::crud('dashboard', 'ProductCrudController');
+    Route::crud('artwork', 'ArtWorkController');
 }); // this should be the absolute last line of this file
+
+
+// Route::get('/admin/artwork/list','App\Http\Controllers\Admin\ArtWorkController@index');
