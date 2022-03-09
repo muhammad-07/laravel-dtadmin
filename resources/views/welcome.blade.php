@@ -94,7 +94,10 @@
                 </div>
 
                 <div class="m-t-lg">
-                    * No front-end pages are provided in this demo. Only the admin panel.
+                    * No front-end pages are provided in this demo. Only the admin panel. 
+
+
+                    //test for git push
                 </div>
             </div>
         </div>
