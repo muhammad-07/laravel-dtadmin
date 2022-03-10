@@ -26,6 +26,8 @@ class ArtWorkRequest extends FormRequest
     public function rules()
     {
         return [
+            'name'=>'required|min:2',
+            'description'=>'required',
             'category_id' => 'required',
             'photos' => 'required',
         ];

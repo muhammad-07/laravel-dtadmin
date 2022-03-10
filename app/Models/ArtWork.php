@@ -21,7 +21,7 @@ class ArtWork extends Model
     protected $primaryKey = 'id';
     public $timestamps = true;
     // protected $guarded = ['id'];
-    protected $fillable = ['category_id', 'photos'];
+    protected $fillable = ['name','description','category_id', 'photos'];
     // protected $hidden = [];
     // protected $dates = [];
     // public $translatable = ['name', 'description', 'details', 'features', 'extras'];

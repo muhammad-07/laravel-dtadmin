@@ -15,6 +15,8 @@ class CreateArtWorksTable extends Migration
     {
         Schema::create('art_works', function (Blueprint $table) {
             $table->id();
+            $table->varchar('name');
+            $table->varchar('description')->nullable();
             $table->integer('category_id');
             $table->text('photos')->nullable();
             $table->timestamps();

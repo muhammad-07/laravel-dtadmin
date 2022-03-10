@@ -41,7 +41,7 @@ class ArtWorkController extends CrudController
             'visibleInModal' => false,
         ]);
         // CRUD::addColumn('name');
-        // CRUD::addColumn('slug');
+        // CRUD::addColumn('description');
         // CRUD::addColumn('parent');
         // CRUD::addColumn([   // select_multiple: n-n relationship (with pivot table)
         //     'label'     => 'Articles', // Table column heading
@@ -66,6 +66,32 @@ class ArtWorkController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(ArtWorkRequest::class);
+        CRUD::addField([ // Text
+            'name'  => 'name',
+            'label' => 'Name',
+            'type'  => 'text',
+            // 'tab'   => 'Texts',
+            // optional
+            //'prefix' => '',
+            //'suffix' => '',
+            //'default'    => 'some value', // default value
+            //'hint'       => 'Some hint text', // helpful text, show up after input
+            //'attributes' => [
+            //'placeholder' => 'Some text when empty',
+            //'class' => 'form-control some-class'
+            //], // extra HTML attributes and values your input might need
+            //'wrapperAttributes' => [
+            //'class' => 'form-group col-md-12'
+            //], // extra HTML attributes for the field wrapper - mostly for resizing fields
+            //'readonly'=>'readonly',
+        ]);
+
+        CRUD::addField([   // Textarea
+            'name'  => 'description',
+            'label' => 'Description',
+            'type'  => 'textarea',
+            // 'tab'   => 'Texts',
+        ]);
 
         
         CRUD::addField([  // Select2
@@ -86,6 +112,8 @@ class ArtWorkController extends CrudController
         //     'entity' => 'parent',
         //     'attribute' => 'name',
         // ]);
+
+        
         CRUD::addField([
             'name'  => 'photos',
             'label' => 'Photos ',
