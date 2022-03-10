@@ -17,7 +17,6 @@ class CreateItemssTable extends Migration
             $table->id();
             $table->string('name');
             $table->number('category_id');
-
             $table->timestamps();
         });
     }

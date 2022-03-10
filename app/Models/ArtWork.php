@@ -17,7 +17,7 @@ class ArtWork extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'artworks';
+    protected $table = 'art_works';
     protected $primaryKey = 'id';
     public $timestamps = true;
     // protected $guarded = ['id'];
